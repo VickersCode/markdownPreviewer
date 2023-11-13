@@ -1,13 +1,24 @@
 
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Markdown Previewer</title>
+    
+    <!--Marked CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <script>
+    console.log(marked.parse("Hello"));
 
+    function updatePreview() {
+      document.getElementById("preview").innerHTML = marked.parse(document.getElementById("editor").value);
+    }
+    </script>
 
+    <!--Bootstrap CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
   </head>
@@ -31,7 +42,7 @@
       </div>
     </div>
 
-
+   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.3/marked.min.js" integrity="sha512-k8VZ1riPIP4SH3cilWgwzZLgy30Ropvan+HGG5wNxY+8MPCw/6mZOw9bj4I/QOGimthAbsYf0+8zld5VMx13gQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
