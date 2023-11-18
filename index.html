@@ -22,26 +22,36 @@
 
 
     function setDefault() {
-      let defaultText = `
-        # Markdown H1
-        ## Markdown H2
-        [Learn about UsefulProgrammer]{http://www.usefuleprogrammer.org}
-        <dl>
-          <dt>Definition List</dt>
-          <dd>Is something people use sometimes</dd>
+      let defaultText = `\
+# Markdown H1
+## Markdown H2
+[VickersCode Markdown Previewer Project (FCC)]{https://github.com/VickersCode}
 
-          <dt>Markdown in HTML</dt>
-          <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-        </dl>
 
-        \`Thank you for watching\`
-        - Code
-        - All
-        - Day
+\`This is an example of inline code\`
 
-        > Markdown is weird
+\`\`\`
+function exampleOf() {
+  return multiLineCodeBlock;
+}
+\`\`\`
+
+- These
+- Are
+- All
+- List
+- Items
+
+> Here is some block quote
+
+**BOLD TEXT**
+
+![VickersCode](./images/download.jfif)]
       `;
-      let editorfield = document.getElementById("editor").value = defaultText;
+      let editorField = document.getElementById("editor");
+      let previewElement = document.getElementById("preview");
+      editorField.value = defaultText;
+      previewElement.innerHTML = marked.parse(defaultText)
     }
     </script>
 
