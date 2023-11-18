@@ -13,6 +13,11 @@
     <script>
     console.log(marked.parse("Hello"));
 
+    marked.setOptions({
+      breaks: true,
+      gfm: true
+    });
+
     function updatePreview() {
       let previewElement = document.getElementById("preview");
       let editorValue = document.getElementById("editor").value;
@@ -46,6 +51,9 @@ function exampleOf() {
 
 **BOLD TEXT**
 
+A New Line Character is at the end of this  
+New Line
+
 ![VickersCode](./images/download.jfif)]
       `;
       let editorField = document.getElementById("editor");
@@ -68,12 +76,14 @@ function exampleOf() {
         </div>
       </div>
       <div class="row">
-        <div class="col-6 bg-primary">
-          <p>Editor</p>
-          <textarea id="editor" onkeyup="updatePreview()"></textarea>
+        <div class="col-6 bg-primary d-flex flex-column">
+          <h2 class="text-white text-center my-3">Editor:</h2>
+          <div class="form-group d-flex flex-column">
+            <textarea id="editor" class="form-control flex-grow-1" onkeyup="updatePreview()"></textarea>
+          </div>
         </div>
         <div class="col-6 bg-danger">
-          <p>Previewer</p>
+          <h2>Previewer:</h2>
           <div id="preview"></div>
         </div>
       </div>
