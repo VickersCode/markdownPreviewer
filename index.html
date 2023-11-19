@@ -51,7 +51,7 @@ function exampleOf() {
 
 **BOLD TEXT**
 
-A New Line Character is at the end of this  
+A New Line Character is at the end of this.  
 New Line
 
 ![VickersCode](./images/download.jfif)]
@@ -70,21 +70,24 @@ New Line
   <body onload="setDefault()">
     <div class="container-fluid">
       <div class="row">
-        <div class="col text-center text-white bg-success">
+        <div class="col text-center text-white bg-black">
 
           <h1>Markdown Previewer by Vickers Code</h1>
+          <p>Edit the text-area in the editor to see the markdown change.</p>
         </div>
       </div>
       <div class="row">
         <div class="col-6 bg-primary d-flex flex-column">
           <h2 class="text-white text-center my-3">Editor:</h2>
-          <div class="form-group d-flex flex-column">
+          <div class="form-group flex-grow-1 d-flex flex-column">
             <textarea id="editor" class="form-control flex-grow-1" onkeyup="updatePreview()"></textarea>
           </div>
         </div>
         <div class="col-6 bg-danger">
-          <h2>Previewer:</h2>
-          <div id="preview"></div>
+          <h2 class="text-white text-center my-3">Previewer:</h2>
+          <div class="form-group flex-grow-1 d-flex flex-column">
+            <div id="preview" class="bg-white"></div>
+          </div>
         </div>
       </div>
     </div>
